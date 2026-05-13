@@ -35,5 +35,5 @@ module_exit(dri_exit);
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("deadxraver");
-MODULE_DESCRIPTION("Device Mapper Proxy");
+MODULE_DESCRIPTION("Data Race Inspector");
 
