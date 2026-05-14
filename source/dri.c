@@ -117,6 +117,9 @@ static int dri_map(struct dm_target* ti, struct bio* bio) {
 
 static void dri_dtr(struct dm_target* ti) {
   LOG("dtr called");
+  struct dri_dev_ctx* ctx = (struct dri_dev_ctx*) ti->private;
+
+  dm_put_device(ti, ctx->ddev);
   if (ti->private)
     kvfree(ti->private);
   ti->private = NULL;
