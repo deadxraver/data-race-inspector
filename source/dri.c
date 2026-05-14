@@ -51,7 +51,6 @@ static void dri_end_io(struct bio* cbio) {
   struct dri_clone* dc = cbio->bi_private;
   struct dri_dev_ctx* ctx = dc->ctx;
   unsigned long flags;
-  LOG("bio 0x%lx ended", (void*)cbio);
 
   spin_lock_irqsave(&ctx->lock, flags);
   interval_tree_remove(&dc->io.node, &ctx->intervals);
